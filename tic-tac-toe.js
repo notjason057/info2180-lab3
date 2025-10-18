@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cells = document.querySelectorAll('#board div');
   const statusDiv = document.getElementById('status');
+  const newGameBtn = document.querySelector('.btn');
   let turn = 'X';
   const gameState = Array(9).fill(null);
 
@@ -43,6 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
     cell.addEventListener('mouseout', () => {
       cell.classList.remove('hover');
     });
+
+    newGameBtn.addEventListener('click', () => {
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].textContent = '';
+        cells[i].classList.remove('X', 'O', 'hover');
+        gameState[i] = null;
+      }
+    
+      turn = 'X';
+      statusDiv.textContent = 'Hover over a square to make your play';
+      statusDiv.classList.remove('you-won');
+    });
+    
   });
 });
 
