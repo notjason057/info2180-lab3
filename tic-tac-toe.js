@@ -16,5 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
         turn = (turn === 'X') ? 'O' : 'X';
       }
     });
+
+    cell.addEventListener('mouseover', () => {
+      cell.classList.add('hover');
+    });
+
+    cell.addEventListener('mouseout', () => {
+      cell.classList.remove('hover');
+    });
   });
 });
+
