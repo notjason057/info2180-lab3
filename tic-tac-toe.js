@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cell.classList.add('square');
 
     cell.addEventListener('click', () => {
-      // block further moves if someone already won or cell is taken
       if (statusDiv.classList.contains('you-won') || gameState[index]) return;
 
       gameState[index] = turn;
